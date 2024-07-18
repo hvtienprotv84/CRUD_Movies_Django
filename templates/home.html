@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+{% block content %}
+{% if movie %}
+<div class="container-fluid" id="container-fluid">
+    <div class="row" style="margin-top: 40px;">
+        {% for i in movie %}
+        <div class="col-md-3" style="margin-bottom: 20px;"> <!-- Adjust margin-bottom as needed -->
+            <div class="card" style="width: 20rem;">
+                <div class="card-body">
+                    <img class="card-img-top" src="{{i.image.url}}" alt="Card image cap" style="height: 100px; object-fit: contain;" />
+                    <h3 class="card-title">Tên Phim: {{i.name}}</h3>
+                    <h5 class="card-title">Năm Sản Xuất: {{i.year}}</h5>
+                    <p class="card-text">Nội Dung: {{i.desc}}</p>
+                    <div style="margin-bottom:-50px;">
+                    <a href="{% url 'update_movies' i.id %}" class="btn btn-primary">Chỉnh Sửa</a>
+                    <a href="{% url 'delete_movies' i.id %}" class="btn btn-primary">Xóa</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% else %}
+<h4 style="margin-top: 50px; font-size: 50px; text-align: center;">Danh Sách Phim Đang Trống!</h4>
+{% endif %}
+{% endblock %}

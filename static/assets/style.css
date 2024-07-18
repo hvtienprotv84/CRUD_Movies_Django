@@ -1,0 +1,28 @@
+.card-body {
+    height: 500px;
+}
+.container-fluid{
+    padding-left: 50px;
+    
+}
+.container{
+    margin-top: 50px;
+}
+#container-fluid{
+    margin-top: 50px;
+}
+
+.logo_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo_container img{
+    width: 50px;
+}
+
+.logo_container a{
+    margin-left: 5px;
+    font-weight: bold;
+}
